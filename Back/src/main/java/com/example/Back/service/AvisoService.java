@@ -42,4 +42,8 @@ public class AvisoService {
         }
         return "Erro ao deletar";
     }
+
+    public Aviso listarAvisoPorId(Long id) {
+        return avisoRepository.findById(id).get();
+    }
 }

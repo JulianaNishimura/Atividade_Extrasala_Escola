@@ -24,6 +24,15 @@ public class AvisoController {
         }
     }
 
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Aviso> mostrarAvisoPorId(@PathVariable Long id){
+        try{
+            return ResponseEntity.ok(avisoService.listarAvisoPorId(id));
+        } catch (IllegalArgumentException e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @PostMapping
     public ResponseEntity<String> postarAvisos(@RequestBody Aviso aviso){
         try{
