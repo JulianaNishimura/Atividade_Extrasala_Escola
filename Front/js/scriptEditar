@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', atualizarAviso);
+document.addEventListener('DOMContentLoaded', () => {
+    let editarBtn = document.getElementById('editarBtn');
+    if (editarBtn) {
+        editarBtn.addEventListener('click', atualizarAviso);
+    }
+  });
 
 function atualizarAviso() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -48,7 +53,7 @@ function atualizarAviso() {
       if (!response.ok){
         throw new Error('Erro ao atualizar o aviso');
       }
-      return response.json();
+      return response.text();
     })
     .then((data) => {
       window.location.href = '/pages/mural.html';

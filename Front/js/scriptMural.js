@@ -38,7 +38,7 @@ function criarAvisos(data) {
 
     let data = document.createElement('p');
     data.classList.add('avisoData');
-    data.textContent = formatarData(aviso.dataPublicacao);
+    data.textContent = formatarData(aviso.dataDePublicacao);
 
     let descricao = document.createElement('p');
     descricao.classList.add('avisoDescricao');
@@ -73,12 +73,22 @@ function criarAvisos(data) {
 }
 
 function formatarData(dataRecebida) {
+  console.log(dataRecebida);
   let data = new Date(dataRecebida);
-  return data.toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
+
+  return (
+    data.toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    }) +
+    ' ' +
+    data.toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    })
+  );
 }
 
 function excluirAviso(id) {
@@ -98,5 +108,5 @@ function excluirAviso(id) {
 }
 
 function atualizarAviso(id) {
-    window.location.href = `/pages/edicaoAviso.html?id=${id}`;
+  window.location.href = `/pages/edicaoAviso.html?id=${id}`;
 }

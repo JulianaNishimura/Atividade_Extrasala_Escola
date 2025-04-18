@@ -19,7 +19,7 @@ public class AvisoService {
 
     public String salvarAviso(Aviso aviso) {
         avisoRepository.save(aviso);
-        return "Professor cadastrado";
+        return "Aviso cadastrado";
     }
 
     public String atualizarAviso(Long id, Aviso aviso) {
