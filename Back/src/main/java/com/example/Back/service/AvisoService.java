@@ -18,11 +18,28 @@ public class AvisoService {
     }
 
     public String salvarAviso(Aviso aviso) {
+        avisoRepository.save(aviso);
+        return "Professor cadastrado";
     }
 
     public String atualizarAviso(Long id, Aviso aviso) {
+        if(avisoRepository.existsById(id)){
+            Aviso avisoExistente = avisoRepository.findById(id).get();
+            avisoExistente.setAutor(aviso.getAutor());
+            avisoExistente.setTitulo(aviso.getTitulo());
+            avisoExistente.setDescricao(aviso.getDescricao());
+            avisoExistente.setDataDePublicacao(aviso.getDataDePublicacao());
+            avisoRepository.save(avisoExistente);
+            return "Atualizado com sucesso";
+        }
+        return "Erro ao atualizar";
     }
 
     public String deletarAviso(Long id) {
+        if(avisoRepository.existsById(id)){
+            avisoRepository.deleteById(id);
+            return "deletado com sucesso";
+        }
+        return "Erro ao deletar";
     }
 }

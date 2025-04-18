@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/avisos")
 public class AvisoController {
+
     @Autowired
     private AvisoService avisoService;
 
