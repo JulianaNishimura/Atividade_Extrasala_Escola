@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function adicionar() {
+function adicionar(event) {
+  event.preventDefault(); 
   let titulo = document.getElementById('titulo').value;
   let descricao = document.getElementById('descricao').value;
   let autor = document.getElementById('autor').value;
@@ -31,7 +32,7 @@ function adicionar() {
     })
     .then((data) => {
       console.log(data);
-      window.location.href = '/mural.html';
+      window.location.href = 'mural.html';
     })
     .catch((error) => {
       console.error('Erro:', error);

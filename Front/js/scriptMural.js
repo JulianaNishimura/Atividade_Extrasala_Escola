@@ -19,7 +19,7 @@ function listarAvisos() {
 }
 
 function criarAvisos(data) {
-  let div = document.getElementById('divAvisos');
+  let div = document.getElementById('avisosContainer');
 
   data.forEach((aviso) => {
     let card = document.createElement('div');

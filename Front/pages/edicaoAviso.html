@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Aviso</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/scriptEditar"></script>
+    <script src="/js/scriptEditar.js"></script>
 </head>
-<body>
-    <div>
-        <h2>Edite o aviso!</h2>
-        <label for="titulo">Título: </label>
-        <input type="text" id="titulo"> <br><br>
-        <label for="descricao">Descrição: </label>
-        <input type="text" id="descricao"> <br><br>
-        <label for="autor">Autor: </label>
-        <input type="text" id="autor"> <br><br>
-        <button id="editarBtn">Editar!</button>
-    </div>
+<body id="bodyEditar">
+    <main class="avisoFormulario">
+        <h2 class="tituloCadastro">Edite o aviso! 📝</h2>
+        <form class="avisoFormularioCaixa">
+            <label for="titulo" class="labelsCadastro">Título: </label>
+            <input type="text" id="titulo" required class="inputsCadastro" placeholder="Digite o título..."> <br><br>
+            <label for="descricao" class="labelsCadastro">Descrição: </label>
+            <textarea id="descricao" required class="inputsCadastroDescricao" placeholder="Digite a descrição..."></textarea><br><br>
+            <label for="autor" class="labelsCadastro">Autor: </label>
+            <input type="text" id="autor" required class="inputsCadastro" placeholder="Digite o nome do autor..."> <br><br>
+            <button id="editarBtn">Editar!</button>
+        </form>
+    </main>
 </body>
 </html>

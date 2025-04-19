@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/scriptCadastrar.js"></script>
 </head>
-<body>
-    <div>
-        <h2>Adicione um aviso!</h2>
-        <label for="titulo">Título: </label>
-        <input type="text" id="titulo" required> <br><br>
-        <label for="descricao">Descrição: </label>
-        <input type="text" id="descricao" required> <br><br>
-        <label for="autor">Autor: </label>
-        <input type="text" id="autor" required> <br><br>
-        <button id="adicionarBtn">Adicionar!</button>
-    </div>
+<body id="bodyCadastro">
+    <main class="avisoFormulario">
+        <h2 class="tituloCadastro">Adicione um aviso! ✏️</h2>
+        <form class="avisoFormularioCaixa">
+            <label for="titulo" class="labelsCadastro">Título: </label>
+            <input type="text" id="titulo" required class="inputsCadastro" placeholder="Digite o título..."> <br><br>
+            <label for="descricao" class="labelsCadastro">Descrição: </label>
+            <textarea id="descricao" required class="inputsCadastroDescricao" placeholder="Digite a descrição..."></textarea><br><br>
+            <label for="autor" class="labelsCadastro">Autor: </label>
+            <input type="text" id="autor" required class="inputsCadastro" placeholder="Digite o nome do autor..."> <br><br>
+            <button id="adicionarBtn">Adicionar!</button>
+        </form>
+    </main>
 </body>
 </html>

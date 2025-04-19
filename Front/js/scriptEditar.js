@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-function atualizarAviso() {
+function atualizarAviso(event) {
+  event.preventDefault(); 
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
 
